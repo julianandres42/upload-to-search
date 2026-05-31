@@ -14,7 +14,7 @@ Parameters:
   CodePipelineName:
     Description: The CodePipeline pipeline name that will deploy to your CloudFormation stack.
     Type: String
-    Default: DeployToCloudFormationServiceEx4
+    Default: DeployToCloudFormationServiceEx5
   RetentionPolicy:
     Description: Define if you'd like the resource retained or deleted when the CloudFormation stack is deleted.
     Type: String
