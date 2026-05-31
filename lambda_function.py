@@ -1,7 +1,7 @@
-import boto3
-import re
-import requests
 import math
+
+import boto3
+import requests
 from requests_aws4auth import AWS4Auth
 
 region = 'ap-northeast-1' # e.g. us-west-1

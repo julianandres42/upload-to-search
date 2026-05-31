@@ -3,12 +3,17 @@ phases:
   install:
     runtime-versions:
       python: 3.10
+    commands:
+      - echo "Installing dependencies..."
+      - pip install -r requirements.txt -t package/
   build:
     commands:
-      - aws cloudformation package --template-file upload-to-search.yaml --s3-bucket artifacts-bucket-gl --output-template-file upload.yaml
-
-artifacts:
-  type: zip
-  files:
-    - upload-to-search.yaml
-    - upload.yaml
+      - echo "Preparing ZIP file..."
+      - cp *.py package/
+      - cd package
+      - zip -r ../deployment.zip .
+      - cd ..
+  post_build:
+    commands:
+      - echo "Deploying a AWS Lambda..."
+      - aws lambda update-function-code --function-name upload-to-search --zip-file fileb://deployment.zip
