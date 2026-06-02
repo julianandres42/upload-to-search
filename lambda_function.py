@@ -29,7 +29,7 @@ def listToString(s):
     return str1
     
 # Lambda execution starts here
-def handler(event, context):
+def lambda_handler(event, context):
     for record in event['Records']:
 
         # Get the bucket name and key for the new file
