@@ -4,7 +4,7 @@ import boto3
 import requests
 from requests_aws4auth import AWS4Auth
 
-region = 'ap-northeast-1' # e.g. us-west-1
+region = 'us-east-1' # e.g. us-west-1
 service = 'es'
 credentials = boto3.Session().get_credentials()
 print("Credentials:", credentials)
